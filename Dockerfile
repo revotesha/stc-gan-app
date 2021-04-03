@@ -5,7 +5,8 @@ COPY run_app.sh app/
 
 WORKDIR app/
 
-RUN pip install -r requirements.txt && \
+RUN pip install pip==21.0.1 && \
+    pip install -r requirements.txt && \
     chmod u+x run_app.sh
 
 COPY src/ .
