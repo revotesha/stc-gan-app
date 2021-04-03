@@ -9,13 +9,16 @@ bleach==3.2.1
 certifi==2020.11.8
 cffi==1.14.3
 chardet==3.0.4
+configparser==5.0.2 
 cycler==0.10.0
 decorator==4.4.2
 defusedxml==0.6.0
 distlib==0.3.1
 Django==3.1.7
+django-on-heroku==1.1.2
 entrypoints==0.3
 filelock==3.0.12
+gunicorn==20.1.0
 idna==2.10
 ipykernel==5.3.4
 ipython==7.16.0
