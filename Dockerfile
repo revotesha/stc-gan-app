@@ -11,4 +11,4 @@ RUN pip install pip==21.0.1 && \
 
 COPY src/ .
 
-CMD ["/bin/sh", "run_app.sh"]
+CMD ["/bin/sh", "run_app.sh", "heroku ps:scale web=1"]
