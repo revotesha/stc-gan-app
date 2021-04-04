@@ -2,6 +2,7 @@ FROM python:3.9-slim-buster
 
 COPY requirements.txt /app/requirements.txt
 COPY run_app.sh app/
+COPY Procfile app/
 
 WORKDIR app/
 
