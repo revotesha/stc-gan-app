@@ -4,7 +4,7 @@ COPY requirements.txt /app/requirements.txt
 COPY run_app.sh app/
 COPY Procfile app/
 
-WORKDIR app/
+WORKDIR /app/
 
 RUN pip install pip==21.0.1 && \
     pip install -r requirements.txt && \
