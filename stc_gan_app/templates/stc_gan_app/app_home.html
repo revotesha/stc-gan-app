@@ -3,11 +3,17 @@
 <html>
 <head>
     <title>
+        <h1> Image-to-Image Style Transfer with CycleGAN </h1>
     </title>
 </head>
 
 <body>
-    <h1> Image-to-Image Style Transfer with CycleGAN </h1>
+    {% for item in in_out_data %}
+        <h1>{{ item.type }}</h1>
+        <h2>{{ item.meta_data }}</h2>
+        <h2>{{ item.status }}</h2>
+        <p>{{ item.data }}</p>
+    {% endfor %}
 </body>
 
 </html>
