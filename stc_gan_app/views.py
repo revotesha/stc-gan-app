@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import models.i2i_style_transfer
+from .models import i2i_style_transfer
 
 model_input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
