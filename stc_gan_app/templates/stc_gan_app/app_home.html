@@ -13,17 +13,32 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1> Image-to-Image Style Transfer with CycleGAN </h1>
+    <main>
 
-        {% for item in in_out_data %}
-            <h4>{{ item.meta_data }}</h4>
-            <h4>{{ item.status }}</h4>
-            <h4>  </h4>
-            <h3>{{ item.type }}</h3>
-            <p>{{ item.data }}</p>
-        {% endfor %}
-    </div>
+        <link rel="stylesheet" type="text/css" href="{% static 'stc_gan_app/app_home.css' %}">
+
+        <h1> Image-to-Image Style Transfer with CycleGAN </h1>
+        
+        <section class="input-image">
+            {% for item in input_info %}
+                <h6>{{ item.meta_data }}</h6>
+                <h6>{{ item.status }}</h6>
+                <h4> <br> </h4>
+                <h3>{{ item.type }}</h3>
+                <p>{{ item.data }}</p>
+            {% endfor %}
+        </section>
+
+        <section class="output-image">
+            {% for item in output_info %}
+                <h6>{{ item.meta_data }}</h6>
+                <h6>{{ item.status }}</h6>
+                <h4> <br> </h4>
+                <h3>{{ item.type }}</h3>
+                <p>{{ item.data }}</p>
+            {% endfor %}
+        </section>
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
