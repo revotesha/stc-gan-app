@@ -20,7 +20,7 @@ output_info = [
     {
         'type':'CycleGAN image',
         'data': model_output,
-        'meta_data':'Processing time: 20s <br> Output image size: 24MB',
+        'meta_data':'Processing time: 20s &#10;&#13 Output image size: 24MB',
         'status':'Done!'
     }
 ]
