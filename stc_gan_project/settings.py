@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*'] # had to change this from [] to [*] because I changed DEBU
 # Application definition
 
 INSTALLED_APPS = [
+    'stc_gan_app.apps.StcGanAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
