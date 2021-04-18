@@ -1,21 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import i2i_style_transfer
+import numpy as np
 
-model_input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+model_input = np.arange(100000).reshape(100, 1000)
 
 model_output = i2i_style_transfer(model_input)
 
 in_out_data = [
 
-    {'type':'Model Input',
+    {'type':'Input image',
      'data':model_input,
-     'meta_data':'Input image size:24MB',
+     'meta_data':'Input image size: 24MB',
      'status':'Processing ... Pleae wait. Output image will display on the right.'},
 
-     {'type':'Model Output',
+     {'type':'CycleGAN image',
      'data': model_output,
-     'meta_data':'Processing time: 20s \n Output image size:24MB',
+     'meta_data':'Processing time: 20s <br> Output image size: 24MB',
      'status':'Done!'}
 ]
 
