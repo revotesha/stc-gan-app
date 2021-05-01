@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#x0i#t)d_7fa95t)x#)n1^e63h=cx+e9(=ir6x*zz6yc%_f!mt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*'] # had to change this from [] to [*] because I changed DEBUG = True to DEBUG = False.
 
@@ -73,41 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'stc_gan_project.wsgi.application'
-
-# logging settings
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        }
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-            'stream': sys.stdout,
-        }
-    },
-    'loggers': {
-        'MYAPP': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        }
-    }
-}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

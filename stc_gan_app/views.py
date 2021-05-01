@@ -1,6 +1,5 @@
 import os
 import sys
-import logging
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -8,46 +7,6 @@ from .models import i2i_style_transfer
 from django.core.files.storage import default_storage
 
 import numpy as np
-
-# logging settings
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': ('%(asctime)s [%(process)d] [%(levelname)s] ' +
-                       'pathname=%(pathname)s lineno=%(lineno)s ' +
-                       'funcname=%(funcName)s %(message)s'),
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        }
-    },
-    'handlers': {
-        'null': {
-            'level': 'DEBUG',
-            'class': 'logging.NullHandler',
-        },
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-            'stream': sys.stdout,
-        }
-    },
-    'loggers': {
-        'MYAPP': {
-            'handlers': ['console'],
-            'level': 'INFO',
-        }
-    }
-}
-
-logging.config.dictConfig(LOGGING)
-logger = logging.getLogger('MYAPP')
-logger.info("Just testing")
-
 
 model_input = np.arange(100000).reshape(100, 1000)
 
@@ -94,3 +53,5 @@ def app_home(request):
     os.remove(file_url)
 
     return render(request, 'stc_gan_app/model_results.html', context)
+
+sys.stdout.flush()
