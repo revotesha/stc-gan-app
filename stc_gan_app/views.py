@@ -6,6 +6,13 @@ import os
 
 import numpy as np
 
+import logging
+
+logging.config.dictConfig(LOGGING)
+logger = logging.getLogger('MYAPP')
+logger.info("Just testing")
+
+
 model_input = np.arange(100000).reshape(100, 1000)
 
 model_output = i2i_style_transfer(model_input)
