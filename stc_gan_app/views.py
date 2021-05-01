@@ -51,7 +51,10 @@ def app_home(request):
 
     # remove image after we're done with it
     os.remove(file_url)
+    images = os.listdir(file_url)
+    print(f'Number of image files: {len(images)}')
+    sys.stdout.flush()
 
     return render(request, 'stc_gan_app/model_results.html', context)
 
-sys.stdout.flush()
+sys.stdout.flush() # maybe you don't need this
