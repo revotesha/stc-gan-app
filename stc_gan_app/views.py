@@ -40,7 +40,7 @@ def app_home(request):
         file_url = default_storage.path(file_name)
 
     else:
-        return render(request, 'stc_gan_app/upload_image.html', context)
+        return render(request, 'stc_gan_app/upload_image.html')
 
     # access input_info and do something to it. output output_info
 
