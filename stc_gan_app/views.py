@@ -22,7 +22,7 @@ def app_home(request):
         input_info = [
             {
                 'type':'Input image',
-                'data': file_url, # we need to open this file and then close it after we're done
+                'data': file_url,
                 'meta_data':f'Input image size: {file_size}'
             }
         ]
