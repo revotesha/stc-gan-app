@@ -49,7 +49,7 @@ def app_home(request):
     }
 
     # remove image after we're done with it
-    os.remove(file_url)
+    # os.remove(file_url) -- we need to somehow delete images when we're done
 
     return render(request, 'stc_gan_app/model_results.html', context)
 
