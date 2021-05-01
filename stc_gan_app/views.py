@@ -7,7 +7,7 @@ import sys
 
 import numpy as np
 
-from ...stc_gan_project.settings import LOGGING
+from ..stc_gan_project.settings import LOGGING
 
 import logging
 
