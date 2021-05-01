@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import i2i_style_transfer
 from django.core.files.storage import default_storage
 import os
 
