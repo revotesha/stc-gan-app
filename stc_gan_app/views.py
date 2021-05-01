@@ -23,7 +23,7 @@ def app_home(request):
             {
                 'type':'Input image',
                 'data': file_url,
-                'meta_data':f'Input image size: {file_size}'
+                'meta_data':f'Input image size: {round(file_size, 4)} Megabytes'
             }
         ]
 
@@ -39,7 +39,7 @@ def app_home(request):
         {
             'type':'CycleGAN image',
             'data': model_output,
-            'meta_data':'Processing time: 20s &#10;&#13 Output image size: 24MB'
+            'meta_data':f'Processing time: 20s; Output image size: {round(file_size, 4)}'
         }
     ]
 
