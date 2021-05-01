@@ -24,17 +24,15 @@
         <section class="input-image">
             {% for item in input_info %}
                 <h6>{{ item.meta_data }}</h6>
-                <h6>{{ item.status }}</h6>
                 <h4> <br> </h4>
                 <h3>{{ item.type }}</h3>
-                <p>{{ item.data }}</p>
+                <img src="{% static item.data %}"/>
             {% endfor %}
         </section>
 
         <section class="output-image">
             {% for item in output_info %}
                 <h6>{{ item.meta_data }}</h6>
-                <h6>{{ item.status }}</h6>
                 <h4> <br> </h4>
                 <h3>{{ item.type }}</h3>
                 <p>{{ item.data }}</p>
