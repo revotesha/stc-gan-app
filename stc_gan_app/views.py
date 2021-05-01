@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import i2i_style_transfer
+from django.core.files.storage import default_storage
+import os
+
 import numpy as np
 
 model_input = np.arange(100000).reshape(100, 1000)
@@ -27,8 +29,24 @@ output_info = [
 
 # Create your views here.
 def app_home(request):
+
+    if request.method == 'POST':
+
+        file = request.FILES['ImageFile']
+        file_name = default_storage.save(file.name, file)
+        file_url = default_storage.path(file_name)
+
+    else:
+        return render(request, 'stc_gan_app/upload_image.html', context)
+
+    # access input_info and do something to it. output output_info
+
     context = {
         "input_info":input_info,
         "output_info":output_info
     }
-    return render(request, 'stc_gan_app/app_home.html', context)
+
+    # remove image after we're done with it
+    os.remove(file_url)
+
+    return render(request, 'stc_gan_app/model_results.html', context)
