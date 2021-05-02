@@ -15,14 +15,14 @@ def app_home(request):
     if request.method == 'POST':
 
         file = request.FILES['ImageFile']
-        file_name = default_storage.save('input_image', file)
+        file_name = default_storage.save(file.name, file)
         file_size = (file.size)/(1024*1024)
 
         file_url = default_storage.path(file_name)
 
-        shutil.copyfile(file_url, 'app/stc_gan_app/static/stc_gan_app')
+        shutil.copyfile(file_url, 'app/stc_gan_app/static/stc_gan_app/input_image.png')
 
-        items = os.listdir('app/stc_gan_app/static/stc_gan_app')
+        items = os.listdir('app/stc_gan_app/static/stc_gan_app/')
 
         input_info = [
             {
