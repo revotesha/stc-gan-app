@@ -1,7 +1,7 @@
 import os
 import sys
 
-from django.conf import BASE_DIR
+from django.conf.settings import BASE_DIR
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import i2i_style_transfer
