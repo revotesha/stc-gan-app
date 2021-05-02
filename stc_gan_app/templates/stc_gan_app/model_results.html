@@ -27,7 +27,7 @@
                 <h4> <br> </h4>
                 <h3>{{ item.type }}</h3>
                 <h4>{{ item.data }}</h4>
-                <img src="{% static '{{ item.data }}' %}">
+                <img src="{{ item.data }}">
             {% endfor %}
         </section>
 
