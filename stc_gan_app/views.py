@@ -1,6 +1,7 @@
 import os
 import sys
 
+import shutils
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import i2i_style_transfer
@@ -14,15 +15,16 @@ def app_home(request):
     if request.method == 'POST':
 
         file = request.FILES['ImageFile']
-        file_name = default_storage.save(file.name, file)
+        file_name = default_storage.save('input_image', file)
         file_size = (file.size)/(1024*1024)
 
         file_url = default_storage.path(file_name)
 
+        shutils.copyfile(file_url, './static/stc_gan_app')
+
         input_info = [
             {
                 'type':'Input image',
-                'data': '../../../..' + file_url,
                 'meta_data':f'Input image size: {round(file_size, 4)} Megabytes'
             }
         ]
