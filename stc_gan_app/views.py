@@ -20,9 +20,9 @@ def app_home(request):
 
         file_url = default_storage.path(file_name)
 
-        shutil.copyfile(file_url, '/static/stc_gan_app')
+        shutil.copyfile(file_url, 'app/stc_gan_app/static/stc_gan_app')
 
-        items = os.listdir('/static/stc_gan_app')
+        items = os.listdir('app/stc_gan_app/static/stc_gan_app')
 
         input_info = [
             {
