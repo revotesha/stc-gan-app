@@ -116,7 +116,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -134,3 +133,12 @@ sys.stdout.flush()
 
 # for whitenoise compression
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+# rethink the BASE_DIR + 'media'
+# because the file actually gets saved at app/media/name.pgn
+# no need to have the whitenoise stuff
+# I was trying to manually move the image saved ad ^^ to the static folder. it looks
+# like this is a more promising option
+# just need to figure out how to use an absolute path -- need to print it somehow
+# and this is why I was adding base_dir within views.py (though maybe creating base_dir there
+# gives a different url than when created here?
