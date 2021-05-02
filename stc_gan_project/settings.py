@@ -129,7 +129,7 @@ MEDIA_URL = '/media/'
 # Configure Django App for Heroku.
 django_on_heroku.settings(locals())
 
-print("base dir path:" + BASE_DIR)
+print("base dir path:", BASE_DIR)
 sys.stdout.flush()
 
 # for whitenoise compression
