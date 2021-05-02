@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,6 +129,5 @@ MEDIA_URL = '/media/'
 # Configure Django App for Heroku.
 django_on_heroku.settings(locals())
 
-print(BASE_DIR)
-print(MEDIA_ROOT)
-sys.stdout.flush() # maybe you don't need this
+# for whitenoise compression
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
