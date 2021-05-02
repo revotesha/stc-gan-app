@@ -1,7 +1,6 @@
 import os
 import sys
 
-from django.conf.settings import BASE_DIR
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import i2i_style_transfer
@@ -9,6 +8,9 @@ from django.core.files.storage import default_storage
 
 import numpy as np
 from pathlib import Path
+
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Create your views here.
 def app_home(request):
