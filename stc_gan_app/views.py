@@ -22,7 +22,7 @@ def app_home(request):
         input_info = [
             {
                 'type':'Input image',
-                'data': file_url,
+                'data': '../../../../' + file_url,
                 'meta_data':f'Input image size: {round(file_size, 4)} Megabytes'
             }
         ]
