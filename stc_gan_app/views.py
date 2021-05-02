@@ -1,13 +1,14 @@
 import os
 import sys
 
-import shutil
+from django.conf import BASE_DIR
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import i2i_style_transfer
 from django.core.files.storage import default_storage
 
 import numpy as np
+from pathlib import Path
 
 # Create your views here.
 def app_home(request):
@@ -19,6 +20,9 @@ def app_home(request):
         file_size = (file.size)/(1024*1024)
 
         file_url = default_storage.path(file_name)
+
+        print("base dir path:", BASE_DIR)
+        sys.stdout.flush()
 
         shutil.copyfile(file_url, 'app/stc_gan_app/static/stc_gan_app/input_image.png')
 
