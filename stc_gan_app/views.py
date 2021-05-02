@@ -1,7 +1,7 @@
 import os
 import sys
 
-import shutils
+import shutil
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import i2i_style_transfer
@@ -20,7 +20,7 @@ def app_home(request):
 
         file_url = default_storage.path(file_name)
 
-        shutils.copyfile(file_url, './static/stc_gan_app')
+        shutil.copyfile(file_url, './static/stc_gan_app')
 
         input_info = [
             {
