@@ -127,3 +127,7 @@ MEDIA_URL = '/media/'
 
 # Configure Django App for Heroku.
 django_on_heroku.settings(locals())
+
+print(BASE_DIR)
+print(MEDIA_ROOT)
+sys.stdout.flush() # maybe you don't need this
