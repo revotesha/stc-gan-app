@@ -22,9 +22,12 @@ def app_home(request):
 
         shutil.copyfile(file_url, './static/stc_gan_app')
 
+        items = os.listdir('./static/stc_gan_app')
+
         input_info = [
             {
                 'type':'Input image',
+                'data': items,
                 'meta_data':f'Input image size: {round(file_size, 4)} Megabytes'
             }
         ]
