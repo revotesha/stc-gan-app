@@ -1,3 +1,3 @@
 #! /bin/sh
 
-python manage.py runserver 0.0.0.0:$PATH
+python manage.py runserver 0.0.0.0:$PORT

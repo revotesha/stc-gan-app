@@ -1,6 +1,34 @@
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="file" name="ImageFile"/>
-    <input type="submit" name="submit" value="Upload"/>
+{% load static %}
 
-</form>
+<!DOCTYPE html>
+
+<html>
+    <title>CycleGAN App</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'stc_gan_app/upload_image.css' %}">
+
+    <body>
+        <h1> Image-to-Image Style Transfer with CycleGAN </h1>
+        <p>
+            A simple web app for a transfering style between images. Image-to-image style transfer is done with CycleGAN.
+            
+            Upload two images and specify direction of style transfer below. If direction of style transfer is Image 1 to Image 2, Image 2 will be recreated using the syle of Image 1, and vice versa.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Select Image 1</h2>
+            <input type="file" name="FirstImageFile"/>
+            <h2>Select Image 2</h2>
+            <input type="file" name="SecondImageFile"/>
+            <h2>Style Transfer Direction</h2>
+            <input type="Radio" name="style_direction" Value="one_to_two" checked> Image 1 to Image 2
+            <input type="Radio" name="style_direction" Value="two_to_one"> Image 2 to Image 1
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Upload Images"/>
+
+        </form>
+    </body>
+    
+</html>

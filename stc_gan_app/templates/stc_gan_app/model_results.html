@@ -26,7 +26,7 @@
                 <h6>{{ item.meta_data }}</h6>
                 <h4> <br> </h4>
                 <h3>{{ item.type }}</h3>
-                <img src="{% static 'stc_gan_app/input_image.png' %}">
+                <img src="{% static 'stc_gan_app/to_image.png' %}" height="600">
                 <!-- <img src="{% static '{{ item.data }}' %}"> -->
             {% endfor %}
         </section>
@@ -36,7 +36,7 @@
                 <h6>{{ item.meta_data }}</h6>
                 <h4> <br> </h4>
                 <h3>{{ item.type }}</h3>
-                <img src="{% static 'stc_gan_app/output_image.png' %}">
+                <img src="{% static 'stc_gan_app/output_image.png' %}" height="600">
                 <!-- <img src="{% static '{{ item.data }}' %}"> -->
             {% endfor %}
         </section>

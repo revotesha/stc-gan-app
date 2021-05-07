@@ -6,7 +6,7 @@ COPY Procfile app/
 
 WORKDIR /app/
 
-# ENV PORT 8000
+ENV PORT 8000
 
 RUN pip install pip==21.0.1 && \
     pip install -r requirements.txt && \
